@@ -18,11 +18,14 @@
     "@mui/lab": "^5.0.0-alpha.153",
     "@mui/material": "^5.14.18",
     "@mui/styled-engine-sc": "^6.0.0-alpha.6",
+    "@react-three/drei": "^9.89.0",
+    "@react-three/fiber": "^8.15.11",
+    "@types/three": "^0.158.3",
     "@use-gesture/react": "^10.3.0",
     "lethargy": "^1.0.9",
     "lethargy-ts": "^0.0.5",
     "next": "14.0.2",
-    "react": "^18",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-photo-album": "^2.3.0",
     "react-responsive-carousel": "^3.2.23",
@@ -31,7 +34,8 @@
     "react-swipeable": "^7.0.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.1",
-    "swiper": "^11.0.4"
+    "swiper": "^11.0.4",
+    "three": "^0.159.0"
   },
   "devDependencies": {
     "@types/node": "^20",

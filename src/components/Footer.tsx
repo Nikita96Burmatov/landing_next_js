@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
+
 
 import { Typography } from "@material-tailwind/react";
 

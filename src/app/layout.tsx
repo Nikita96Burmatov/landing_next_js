@@ -21,13 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Head />
-        <Navigate />
+        {/* <Head /> */}
+        {/* <Navigate /> */}
         {children}
-        <AvatarButton />
-        <Background />
-        <div className="custom"></div>
-        <Footer />
+        {/* <AvatarButton /> */}
+        {/* <Background /> */}
+        {/* <div className="custom"></div> */}
+        {/* <Footer /> */}
       </body>
     </html>
   );
