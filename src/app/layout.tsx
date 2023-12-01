@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Head from "@/components/Head";
 import Background from "@/components/Background";
 import AvatarButton from "@/components/AvatarButton";
+import "../scss/styles.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
