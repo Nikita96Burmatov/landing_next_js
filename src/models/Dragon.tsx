@@ -36,7 +36,7 @@ export default function Dragon() {
   });
 
   return (
-    <mesh position={[-5, -2, 1]}  >
+    <mesh position={[-5, -2, 1]} rotation={[-4, -5.3, 10]}>
       <primitive object={scene} ref={dragonRef} />
     </mesh>
   );
