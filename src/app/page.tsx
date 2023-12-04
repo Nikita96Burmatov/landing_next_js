@@ -10,11 +10,12 @@ import Loader from "@/components/Loader";
 import Island from "@/models/Island";
 import Sky from "@/models/Sky";
 import Dragon from "@/models/Dragon";
+import DragonTwo from "@/models/DragonTwo";
 
 export default function Home() {
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
-    let screenPositions = [0, -8.5, -43];
+    let screenPositions = [0, -6.5, -19];
     let rotation = [0.1, 0.1, 0];
 
     if (window.innerWidth < 768) {
@@ -39,6 +40,7 @@ export default function Home() {
           <Dragon />
           <Sky />
           <Island
+            className= "z-10"
             position={IslandPositions}
             scale={IslandScale}
             rotation={islandRotation}

@@ -16,10 +16,10 @@ export default function Dragon() {
     // Уменьшаем влияние синуса для плавного движения вверх-вниз
     dragonRef.current.position.x += Math.sin(clock.elapsedTime) * 0.02 + 0.02;
   
-    const movementSpeed = 0.01;
-    if (dragonRef.current.position.x > camera.position.x + 10) {
+    const movementSpeed = 0.05;
+    if (dragonRef.current.position.x > camera.position.x + 40) {
       dragonRef.current.rotation.y = Math.PI / 0.02;
-    } else if (dragonRef.current.position.x < camera.position.x - 10) {
+    } else if (dragonRef.current.position.x < camera.position.x - 40) {
       dragonRef.current.rotation.y = 0;
     }
   
@@ -36,7 +36,7 @@ export default function Dragon() {
   });
 
   return (
-    <mesh position={[-5, -2, 1]} rotation={[-4, -5.3, 10]}>
+    <mesh position={[-5, 2, 0]} rotation={[-4, -5.3, 10]}>
       <primitive object={scene} ref={dragonRef} />
     </mesh>
   );
