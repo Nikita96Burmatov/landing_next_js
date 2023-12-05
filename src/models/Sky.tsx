@@ -3,9 +3,8 @@ import React from "react";
 
 export default function Sky() {
   const sky = useGLTF("/_next/static/3d/unreal_engine_4_sky.glb");
-  console.log(sky);
   return (
-    <mesh position={[-10, 2, -10]}>
+    <mesh position={[-10, -10, -10]} scale={[10, 10, 10]}>
       <primitive object={sky.scene} />
     </mesh>
   );

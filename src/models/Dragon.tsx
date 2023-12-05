@@ -7,7 +7,6 @@ export default function Dragon() {
   const { scene, animations } = useGLTF("/_next/static/3d/dragon.glb");
   const { actions } = useAnimations(animations, dragonRef);
 
-  console.log(actions)
   useEffect(() => {
     actions["flying_skeletal.3"].play();
   }, []);
@@ -17,9 +16,9 @@ export default function Dragon() {
     dragonRef.current.position.x += Math.sin(clock.elapsedTime) * 0.02 + 0.02;
   
     const movementSpeed = 0.05;
-    if (dragonRef.current.position.x > camera.position.x + 40) {
+    if (dragonRef.current.position.x > camera.position.x + 45) {
       dragonRef.current.rotation.y = Math.PI / 0.02;
-    } else if (dragonRef.current.position.x < camera.position.x - 40) {
+    } else if (dragonRef.current.position.x < camera.position.x - 45) {
       dragonRef.current.rotation.y = 0;
     }
   
