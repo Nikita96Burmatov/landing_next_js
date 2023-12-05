@@ -1,9 +1,4 @@
 "use client";
-import Feature from "@/components/feature";
-import Image from "@/components/Image";
-import Gallery from "@/components/Galerry";
-import Swipers from "@/components/Swiper";
-import AvatarButton from "@/components/AvatarButton";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
 import Loader from "@/components/Loader";
@@ -11,20 +6,12 @@ import Island from "@/models/Island";
 import Sky from "@/models/Sky";
 import Dragon from "@/models/Dragon";
 import IslandTree from "@/models/IslandTree";
-import { OrbitControls } from "@react-three/drei";
-
-const CameraControls = () => {
-  const { camera, gl } = useThree();
-  const controls = useRef();
-
-  return <OrbitControls ref={controls} args={[camera, gl.domElement]} />;
-};
 
 export default function Home() {
   const [isRotation, setIsRotation] = useState(false);
-  const [activeModel, setActiveModel] = useState("island");
   const [currentStage, setCurrentStage] = useState(1);
 
+  const cameraRef = useRef();
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
     let screenPositions = [0, -6.5, -19];
@@ -41,16 +28,6 @@ export default function Home() {
 
   const [IslandScale, IslandPositions, islandRotation] =
     adjustIslandForScreenSize();
-  const [islandTreeScale, islandTreePositions, islandTreeRotation] = [
-    [0.01, 0.01, 0.01],
-    [-6.5, -0.5, -3],
-    [0.1, 0.7, 0.1],
-  ];
-  const handleModelClick = () => {
-    setActiveModel((prevModel) =>
-      prevModel === "island" ? "islandTree" : "island"
-    );
-  };
 
   return (
     <section className="w-full h-screen relative">
@@ -64,7 +41,7 @@ export default function Home() {
             intensity={1}
           />
           <Dragon />
-          <Sky  isRotation={isRotation}/>
+          <Sky isRotation={isRotation} />
           <IslandTree
             camera={{ position: [0, 0, 5], fov: 50 }}
             scale={[0.01, 0.01, 0.01]}
@@ -84,7 +61,6 @@ export default function Home() {
             setCurrentStage={setCurrentStage}
           />
         </Suspense>
-        <CameraControls />
       </Canvas>
     </section>
   );

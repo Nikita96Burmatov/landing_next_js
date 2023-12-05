@@ -1,17 +1,14 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import { a } from "@react-spring/three";
-
-
-
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
+
 
 export default function IslandTree(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/_next/static/3d/FloatTree.glb");
   const { actions } = useAnimations(animations, group);
 
-  console.log(actions);
   useEffect(() => {
     actions["Take 001"].play();
   }, []);
