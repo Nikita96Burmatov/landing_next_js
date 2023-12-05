@@ -23,6 +23,7 @@ const CameraControls = () => {
 export default function Home() {
   const [isRotation, setIsRotation] = useState(false);
   const [activeModel, setActiveModel] = useState("island");
+  const [currentStage, setCurrentStage] = useState(1);
 
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
@@ -63,7 +64,7 @@ export default function Home() {
             intensity={1}
           />
           <Dragon />
-          <Sky />
+          <Sky  isRotation={isRotation}/>
           <IslandTree
             camera={{ position: [0, 0, 5], fov: 50 }}
             scale={[0.01, 0.01, 0.01]}
@@ -80,6 +81,7 @@ export default function Home() {
             rotation={islandRotation}
             isRotation={isRotation}
             setIsRotation={setIsRotation}
+            setCurrentStage={setCurrentStage}
           />
         </Suspense>
         <CameraControls />
